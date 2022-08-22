@@ -37,7 +37,9 @@ class App extends React.Component {
       return (
           <div className="App">
               <h1 onClick={this.toggleHiring}> Welcome to Groceries store! </h1>
-              {!this.state.isPurchased ? <h2>Yes, we are seling </h2>: <h2>Sorry, try again tomorrow</h2>}
+              {!this.state.isPurchased ? <button className="btn" type="submit">
+            Delete
+          </button> : <h2>Sorry, try again tomorrow</h2>}
               <form onSubmit={this.handleSubmit}>
                   <label htmlFor='item'>Item name</label>
                   <input type='text'  className="input" value={this.state.item} onChange={this.handleChange} id='item' placeholder='item of product' />
@@ -47,7 +49,8 @@ class App extends React.Component {
                   <br />
                   <label htmlFor='quantity'>Quantity</label>
                   <input type='textarea'  className="input" value={this.state.quantity} onChange={this.handleChange} id='quantity' />
-                  <input type="submit" className="btn" /><br/>
+                  <input type="submit" className="btn" /> 
+
               </form>
               <div>
                   <h2>Preview our new item</h2>
